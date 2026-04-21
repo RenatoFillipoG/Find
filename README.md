@@ -10,7 +10,7 @@ O **Find** é uma aplicação Full Stack desenvolvida para ajudar na divulgaçã
 ## 🚀 Tecnologias Utilizadas
 
 ### Frontend
- 
+
 - **HTML5 & CSS3:** Estrutura e estilização moderna com variáveis CSS.
 - **JavaScript (ES6+):** Manipulação de DOM, Fetch API e módulos.
 - **Toastify:** Sistema de notificações personalizadas para feedback do usuário.
