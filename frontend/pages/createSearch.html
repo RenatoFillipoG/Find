@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../assets/fonts/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/createSearch.css" />
+    <link rel="stylesheet" href="./styles/toast.css">
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="logo">
+        <a href="./home.html"><i class="icon-arrow-left2"></i>Voltar</a>
+      </div>
+    </header>
+    <main>
+      <section>
+        <div class="cardCreate">
+          <form id="create-search-form">
+            <input
+              type="text"
+              name="surname"
+              placeholder="Nome do pet"
+              required
+            />
+            <input
+              type="text"
+              name="contact"
+              placeholder="Digite um telefone ou email para contato"
+              required
+            />
+            <textarea
+              name="description"
+              placeholder="Descrição (ex: onde foi visto, cor da coleira...)"
+            ></textarea>
+
+            <div class="row-group">
+              <div class="location-inputs">
+                <input type="text" name="city" placeholder="Cidade" required />
+                <input
+                  type="text"
+                  name="community"
+                  placeholder="Bairro/Comunidade"
+                />
+              </div>
+            </div>
+
+            <div class="image-upload-container">
+              <label for="img-input" class="image-label" id="file-label">
+                <span>Clique para selecionar a foto</span>
+              </label>
+              <input
+                type="file"
+                id="img"
+                name="img"
+                accept="image/*"
+                required
+              />
+              <span id="file-name"></span>
+            </div>
+
+            <div class="buttons">
+              <button type="submit" class="button">Publicar Busca</button>
+              <a class="buttonCancelar" href="home.html">Cancelar</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./script/createSearch.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="../assets/fonts/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/login.css" />
+    <link rel="stylesheet" href="./styles/toast.css">
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="logo">
+        <a href="../index.html"><i class="icon-location"></i></a>
+      </div>
+      <a href="./register.html" class="button">Criar conta</a>
+    </header>
+    <main>
+      <section>
+        <div class="card-register">
+          <form id="login-form">
+          <div class="inputs">
+            <div class="input">
+              <i class="icon-mail-envelope-closed"></i>
+              <input
+                type="text"
+                placeholder="Digite seu email"
+                id="email"
+                required
+              />
+            </div>
+            <div class="input">
+              <i class="icon-lock-closed"></i>
+              <input
+                type="password"
+                placeholder="Digite sua senha"
+                id="password"
+                required
+              />
+            </div>
+          </div>
+          <div class="buttons">
+            <button type="submit" class="button criarConta">Entrar</button>
+          </form>
+            <p>É um recrutador? Teste o sistema agora:</p>
+              <button type="button" id="btn-recruiter" class="btn-recruiter">
+              Acessar como Recrutador
+              </button>
+            <a href="./register.html">Ainda não tenho uma conta</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./script/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+backend/node_modules/
+backend/.env
+backend/database.sqlite
+backend/uploads/
+
+frontend/.DS_Store
+.vscode/
+
+node_modules/
+.env

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find - Meus Anúncios</title>
+    <link rel="stylesheet" href="../assets/fonts/style.css" />
+    <link rel="stylesheet" href="./styles/mySearches.css" />
+    <link rel="stylesheet" href="./styles/toast.css">
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="logo">
+        <a href="home.html"><i class="icon-arrow-left2"></i> Voltar</a>
+      </div>
+      <h1 class="title-page">Meus Anúncios</h1>
+    </header>
+
+    <main>
+      <section id="my-pets-list" class="container-list">
+        <p class="loading">Carregando seus anúncios...</p>
+      </section>
+    </main>
+    <div id="edit-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Editar Anúncio</h2>
+        <form id="edit-form">
+          <input type="hidden" id="edit-id" />
+          <input
+            type="text"
+            id="edit-surname"
+            placeholder="Nome do Pet"
+            required
+          />
+          <input type="text" id="edit-city" placeholder="Cidade" required />
+          <input
+            type="text"
+            id="edit-community"
+            placeholder="Bairro/Comunidade"
+          />
+          <input
+            type="text"
+            id="edit-contact"
+            placeholder="Contato (WhatsApp/Tel)"
+          />
+          <textarea id="edit-description" placeholder="Descrição"></textarea>
+
+          <p>Trocar foto (opcional):</p>
+          <input type="file" id="edit-img" accept="image/*" />
+
+          <button type="submit" class="btn-save">Salvar Alterações</button>
+        </form>
+      </div>
+    </div>
+    <script type="module" src="./script/mySearches.js"></script>
+  </body>
+</html>

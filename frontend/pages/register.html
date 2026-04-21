@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="PT-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar</title>
+
+    <link rel="stylesheet" href="../assets/fonts/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles/register.css" />
+
+    <link rel="stylesheet" href="./styles/toast.css">
+  </head>
+  <body>
+    <header class="cabecalho">
+      <div class="logo">
+        <a href="../index.html"><i class="icon-location"></i></a>
+      </div>
+      <a href="./login.html" class="button">Entrar</a>
+    </header>
+    <main>
+      <section>
+        <div class="card-register">
+          <form id="register-form">
+            <div class="inputs">
+              <div class="input">
+                <i class="icon-user"></i>
+                <input
+                  type="text"
+                  placeholder="Digite seu nome"
+                  id="name"
+                  required
+                />
+              </div>
+
+              <div class="input">
+                <i class="icon-mail-envelope-closed"></i>
+                <input
+                  type="email"
+                  placeholder="Digite seu email"
+                  id="email"
+                  required
+                />
+              </div>
+
+              <div class="input">
+                <i class="icon-lock-closed"></i>
+                <input
+                  type="password"
+                  placeholder="Digite sua senha"
+                  id="password"
+                  required
+                />
+              </div>
+            </div>
+            <div class="buttons">
+              <button type="submit" class="button criarConta">
+                Criar conta
+              </button>
+              <p>É um recrutador? Teste o sistema agora:</p>
+              <a href="./login.html" class="btn-recruiter"> Acessar como Recrutador </a>
+              <a href="./login.html">Já tenho uma conta</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./script/register.js"></script>
+  </body>
+</html>
