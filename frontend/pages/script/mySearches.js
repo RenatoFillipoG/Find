@@ -11,7 +11,7 @@ async function loadMySearches() {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/my-searches", {
+    const response = await fetch("https://find-zga8.onrender.com/my-searches", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -29,7 +29,7 @@ async function loadMySearches() {
       .map(
         (pet) => `
             <div class="card">
-                <img src="http://localhost:3000/uploads/${pet.img}" alt="${pet.surname}">
+                <img src="https://find-zga8.onrender.com/uploads/${pet.img}" alt="${pet.surname}">
                 <div class="card-info">
                     <h3 class="surname">${pet.surname}</h3>
                     <p class="zone"><i class="icon-location"></i> ${pet.community} - ${pet.city}</p>
@@ -60,7 +60,7 @@ async function deletePet(id) {
   const token = localStorage.getItem("userToken");
 
   try {
-    const response = await fetch(`http://localhost:3000/search/${id}`, {
+    const response = await fetch(`https://find-zga8.onrender.com/search/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -84,7 +84,7 @@ function displayPets(pets) {
     .map(
       (pet) => `
         <div class="card">
-            <img src="http://localhost:3000/uploads/${pet.img}" alt="${pet.surname}">
+            <img src="https://find-zga8.onrender.com/uploads/${pet.img}" alt="${pet.surname}">
             <div class="card-info">
                 <h3 class="surname">${pet.surname}</h3>
                 <p class="zone">${pet.community} - ${pet.city}</p>
@@ -134,7 +134,7 @@ document.getElementById("edit-form").addEventListener("submit", async (e) => {
   }
 
   try {
-    const response = await fetch(`http://localhost:3000/search/${id}`, {
+    const response = await fetch(`https://find-zga8.onrender.com/search/${id}`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,

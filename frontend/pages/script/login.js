@@ -9,7 +9,7 @@ form.addEventListener("submit", async (event) => {
   const password = document.getElementById("password").value;
 
   try {
-    const response = await fetch("http://localhost:3000/login", {
+    const response = await fetch("https://find-zga8.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -44,7 +44,7 @@ if (btnRecruiter) {
     document.getElementById("password").value = recruiterData.password;
 
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch("https://find-zga8.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(recruiterData),

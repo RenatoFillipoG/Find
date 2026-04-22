@@ -28,7 +28,7 @@ async function loadHome() {
   }
 
   try {
-    const response = await fetch("http://localhost:3000/search");
+    const response = await fetch("https://find-zga8.onrender.com/search");
     allAnuncios = await response.json();
 
     const container = document.getElementById("cardsContainer");
@@ -41,7 +41,7 @@ async function loadHome() {
       card.innerHTML = `
                 <div class="cardSearch">
                     <h3 class="surname">${anuncio.surname}</h3>
-                    <img src="http://localhost:3000/uploads/${anuncio.img}" alt="Foto de ${anuncio.surname}" />
+                    <img src="https://find-zga8.onrender.com/uploads/${anuncio.img}" alt="Foto de ${anuncio.surname}" />
                     <div class="location">
                         <p class="zone">${anuncio.city}</p>
                         <p class="comunity">${anuncio.community}</p>
@@ -72,7 +72,7 @@ function openInfoModal(pet) {
 
     modal.style.display = "block";
     content.innerHTML = `
-        <img src="http://localhost:3000/uploads/${pet.img}" style="width:100%; border-radius:8px; height: 250px; object-fit: cover;">
+        <img src="https://find-zga8.onrender.com/uploads/${pet.img}" style="width:100%; border-radius:8px; height: 250px; object-fit: cover;">
         <h2 style="margin-top:15px; color:#8f1eae">${pet.surname}</h2>
         <p><strong>Local:</strong> ${pet.community} - ${pet.city}</p>
         <p><strong>Contato:</strong> ${pet.contact || 'Não informado'}</p>
