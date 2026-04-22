@@ -1,3 +1,4 @@
+import URL_API from "../../config.js"
 import { showToast } from "../../index.js";
 
 const form = document.getElementById("create-search-form");
@@ -16,7 +17,7 @@ form.addEventListener("submit", async (event) => {
   const formData = new FormData(form);
 
   try {
-    const response = await fetch("https://find-zga8.onrender.com/search", {
+    const response = await fetch(`${URL_API}/search`, {
       method: "POST",
       headers: {
         'Authorization': `Bearer ${token}`,

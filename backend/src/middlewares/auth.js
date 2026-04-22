@@ -1,4 +1,6 @@
+import 'dotenv/config';
 import jwt from 'jsonwebtoken';
+const JWT_SECRET = process.env.JWT_SECRET;
 
 export const authMiddleware = (request, response, next) => {
     const authHeader = request.headers.authorization;
@@ -15,10 +17,9 @@ export const authMiddleware = (request, response, next) => {
 
     const [scheme, token] = parts;
 
-    const secret = "FDNisdbfiSBFIbibaibdisbdB8123129389g98g98G@(!@U#!@*8192g392g79g79g(&G#(!G(g92319g29g79G@#&";
-
-    jwt.verify(token, secret, (error, decoded) => {
+    jwt.verify(token, JWT_SECRET, (error, decoded) => {
         if (error) {
+            console.error("Erro JWT:", error.message);
             return response.status(401).json({ message: "Token inválido ou expirado!" });
         }
 

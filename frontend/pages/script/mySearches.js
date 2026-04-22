@@ -1,3 +1,4 @@
+import URL_API from "../../config.js";
 import { showToast } from "../../index.js";
 
 const container = document.getElementById("my-pets-list");
@@ -11,7 +12,7 @@ async function loadMySearches() {
   }
 
   try {
-    const response = await fetch("https://find-zga8.onrender.com/my-searches", {
+    const response = await fetch(`${URL_API}/my-searches`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -29,7 +30,7 @@ async function loadMySearches() {
       .map(
         (pet) => `
             <div class="card">
-                <img src="https://find-zga8.onrender.com/uploads/${pet.img}" alt="${pet.surname}">
+                <img src="${URL_API}/uploads/${pet.img}" alt="${pet.surname}">
                 <div class="card-info">
                     <h3 class="surname">${pet.surname}</h3>
                     <p class="zone"><i class="icon-location"></i> ${pet.community} - ${pet.city}</p>
@@ -60,7 +61,7 @@ async function deletePet(id) {
   const token = localStorage.getItem("userToken");
 
   try {
-    const response = await fetch(`https://find-zga8.onrender.com/search/${id}`, {
+    const response = await fetch(`${URL_API}/search/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -84,7 +85,7 @@ function displayPets(pets) {
     .map(
       (pet) => `
         <div class="card">
-            <img src="https://find-zga8.onrender.com/uploads/${pet.img}" alt="${pet.surname}">
+            <img src="${URL_API}/uploads/${pet.img}" alt="${pet.surname}">
             <div class="card-info">
                 <h3 class="surname">${pet.surname}</h3>
                 <p class="zone">${pet.community} - ${pet.city}</p>
@@ -134,7 +135,7 @@ document.getElementById("edit-form").addEventListener("submit", async (e) => {
   }
 
   try {
-    const response = await fetch(`https://find-zga8.onrender.com/search/${id}`, {
+    const response = await fetch(`${URL_API}/search/${id}`, {
       method: "PUT",
       headers: { Authorization: `Bearer ${token}` },
       body: formData,
