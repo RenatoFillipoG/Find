@@ -5,11 +5,11 @@ const form = document.getElementById("create-search-form");
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const token = localStorage.getItem("userToken");
+  const token = localStorage.getItem("userToken") || localStorage.getItem("token");
 
   if (!token) {
     showToast("Você precisa estar logado para criar um anúncio!");
-    window.location.href = "login.html";
+    setTimeout(() => { window.location.href = "login.html"; }, 2000);
     return;
   }
 
@@ -19,7 +19,7 @@ form.addEventListener("submit", async (event) => {
     const response = await fetch("https://find-zga8.onrender.com/search", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
       },
       body: formData,
     });
@@ -28,9 +28,15 @@ form.addEventListener("submit", async (event) => {
 
     if (response.ok) {
       showToast("Pet cadastrado com sucesso!");
-      window.location.href = "home.html";
+      setTimeout(() => { window.location.href = "home.html"; }, 2000);
     } else {
-      showToast("Erro: " + data.message);
+      if (response.status === 401) {
+        showToast("Sessão expirada. Faça login novamente.");
+        localStorage.removeItem("userToken");
+        setTimeout(() => { window.location.href = "login.html"; }, 2000);
+      } else {
+        showToast("Erro: " + (data.message || "Erro ao cadastrar"));
+      }
     }
   } catch (error) {
     console.error("Erro ao enviar:", error);
